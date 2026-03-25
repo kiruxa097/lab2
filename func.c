@@ -8,7 +8,7 @@
 #define M_PI 3.14159265f
 #define eps 0.000001f
 
-
+// Структура для функций
 struct mac {
 	float r;
 	float s;
@@ -36,7 +36,7 @@ float sum1(struct mac* q)  // Прямая сумма
 	return sum;
 }
 
-float sum2(struct mac* q)
+float sum2(struct mac* q) // Обратное суммирование
 {
 	float sum = 0;
 	for (int i = q->n-1; i >= 0; i--)
@@ -46,7 +46,7 @@ float sum2(struct mac* q)
 	return sum;
 }
 
-float sum3(struct mac* q, int l, int r)
+float sum3(struct mac* q, int l, int r) // Олимпийское суммирование
 {
 	if (l == r) { return q->arr[l]; }
 
@@ -74,7 +74,7 @@ float socr(float x)  // Сокращаем угол, чтобы был в диа
 }
 
 
-void mac_sin(struct mac* q)
+void mac_sin(struct mac* q)  // Рекуррентная формула синуса 
 {
 	if (q->n == 0)
 	{
@@ -96,7 +96,7 @@ void mac_sin(struct mac* q)
 
 }
 
-void mac_cos(struct mac *q)
+void mac_cos(struct mac *q)  // Рекуррентная функция косинуса и др.
 {
 
 	if (q->n == 0)
@@ -119,7 +119,7 @@ void mac_cos(struct mac *q)
 
 }
 
-void mac_exp(struct mac* q)
+void mac_exp(struct mac* q)  // Рекуррентная функция экспоненты и др.
 {
 	if (q->n == 0)
 	{
@@ -141,7 +141,7 @@ void mac_exp(struct mac* q)
 
 }
 
-void mac_ln(struct mac* q)
+void mac_ln(struct mac* q)  // Рекуррентная функция натурального логарифма и др.
 {
 	if (q->n == 0)
 	{
@@ -163,7 +163,7 @@ void mac_ln(struct mac* q)
 
 }
 
-void mac_ret(struct mac* q, void (*ret)(struct mac*))
+void mac_ret(struct mac* q, void (*ret)(struct mac*))  // Рекурсивная функция вызова рекурретных функций и др.
 {
 	do {
 		ret(q);
